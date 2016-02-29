@@ -1,0 +1,17 @@
+<h3>Results: </h3>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th> ID</th>
+			<th> Name </th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @products.each do |product| %>
+			<tr>
+				<td><%= link_to product.id, product %> </td>
+				<td><%= product.product_type %> - <%= product.name %> </td>
+			</tr>
+		<% end %>
+	</tbody>	
+</table>

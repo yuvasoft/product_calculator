@@ -1,0 +1,48 @@
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Calculator</h4>
+      </div>
+        <div class="modal-body">
+        	<%= form_tag '/search', format: :js, method: :post, remote: true, class: "form-horizontal" do %>
+              <div class="form-group">
+                <%= label_tag :height, nil, :class => 'control-label col-lg-2' %>
+                <div class="col-lg-10">
+        		      <%= text_field_tag :height %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= label_tag :width, nil, :class => 'control-label col-lg-2' %>
+                <div class="col-lg-10">
+        		      <%= text_field_tag :width %>
+                </div>  
+              </div>
+              <div class="form-group">  
+                <%= label_tag :length, nil, :class => 'control-label col-lg-2' %>
+                <div class="col-lg-10">
+        		      <%= text_field_tag :length%>
+                </div>  
+              </div>
+              <div class="form-group">  
+              <%= label_tag :weight, nil, :class => 'control-label col-lg-2' %>
+                <div class="col-lg-10">
+        		      <%= text_field_tag :weight%>
+                </div>  
+              </div> 
+              <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                  <%= submit_tag "Find",class: "btn btn-primary" %>
+                </div>
+              </div>    
+            <% end %>
+            <div class ="result hidden">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+  </div>
+</div>

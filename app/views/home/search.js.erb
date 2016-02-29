@@ -1,0 +1,12 @@
+$('.result').removeClass('hidden')
+<% if @products.blank? %>
+	$('.result').html("No product matched.")
+<% else %>
+	$(".result").html("<%= escape_javascript(render 'home/result', :products => @products)%>")	
+<% end %>
+
+setTimeout(function(){
+   $("#myModal").modal('hide');
+   $('.result').addClass('hidden').html('');
+}, 5000);
+
